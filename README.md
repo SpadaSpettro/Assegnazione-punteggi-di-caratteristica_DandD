@@ -7,6 +7,7 @@ Questo programma in C++ automatizza l'assegnazione dei punteggi di caratteristic
 ###### Come avviare il programma:
 
 Per avviare il programma, compilare il file Calcolo punteggi di caratteristica D&D.cpp usando un compilatore C++ (come g++ o Visual Studio) e avviare l'eseguibile generato.
+
 È necessario un compilatore che supporti lo standard C++20+.
 
 ## Download
