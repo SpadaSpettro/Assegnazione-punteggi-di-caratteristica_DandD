@@ -1,9 +1,10 @@
-###### Calcolo punteggi di caratteristica D\&D
+###### Calculate D\&D Ability Scores
 
-Questo programma in C++ automatizza l'assegnazione dei punteggi di caratteristica di un personaggio di D\&D (Dungeons \& Dragons), secondo il metodo del lancio del d6.
+This C++ program is used to assign the ability scores of a D\&D (Dungeons \& Dragons) character, using the d6 rolling method.
 
 
 
-###### Come avviare il programma:
+###### How to run the program:
 
-Per avviare il programma, compilare il file Calcolo punteggi di caratteristica D&D.cpp usando un compilatore C++ (come g++ o Visual Studio) e avviare l'eseguibile generato.
+To run the program, compile the file "Assegnazione\_punteggi\_di\_caratteristicaDandD.cpp" using a C++ compiler (such as g++ or Visual Studio) and run the generated executable.
+

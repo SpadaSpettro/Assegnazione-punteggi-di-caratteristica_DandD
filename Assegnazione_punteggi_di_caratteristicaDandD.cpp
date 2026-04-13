@@ -7,14 +7,12 @@
 #include <limits>
 #include <string>
 #include <span>
-
 using namespace std;
 
 //Dichiarazione funzioni
 int controllaScelta();
 char controllaConferma();
 void sceltaCaratteristica(string caratteristica, span<int> vettore, int &CARATTERISTICA);
-void elencoDefinitivo(string caratteristica, int CARATTERISTICA);
 void leggitotali(span<int> vettore);
 
 int main() {
@@ -50,13 +48,13 @@ int main() {
    sceltaCaratteristica("SAGGEZZA", totali, SAGGEZZA);
    sceltaCaratteristica("CARISMA", totali, CARISMA);
    cout<<"\nPunteggi di caratteristica definitivi:"<<endl;
-   elencoDefinitivo("FORZA", FORZA);
-   elencoDefinitivo("DESTREZZA", DESTREZZA);
-   elencoDefinitivo("COSTITUZIONE", COSTITUZIONE);
-   elencoDefinitivo("INTELLIGENZA", INTELLIGENZA);
-   elencoDefinitivo("SAGGEZZA", SAGGEZZA);
-   elencoDefinitivo("CARISMA", CARISMA);
-   
+   cout << "FORZA: " << FORZA << " (modificatore: " << (((FORZA - 10) / 2) > 0 ? "+" : "") << (FORZA - 10) / 2 << ")." << endl;
+   cout << "DESTREZZA: " << DESTREZZA << " (modificatore: " << (((DESTREZZA - 10) / 2) > 0 ? "+" : "") << (DESTREZZA - 10) / 2 << ")." << endl;
+   cout << "COSTITUZIONE: " << COSTITUZIONE << " (modificatore: " << (((COSTITUZIONE - 10) / 2) > 0 ? "+" : "") << (COSTITUZIONE - 10) / 2 << ")." << endl;
+   cout << "INTELLIGENZA: " << INTELLIGENZA << " (modificatore: " << (((INTELLIGENZA - 10) / 2) > 0 ? "+" : "") << (INTELLIGENZA - 10) / 2 << ")." << endl;
+   cout << "SAGGEZZA: " << SAGGEZZA << " (modificatore: " << (((SAGGEZZA - 10) / 2) > 0 ? "+" : "") << (SAGGEZZA - 10) / 2 << ")." << endl;
+   cout << "CARISMA: " << CARISMA << " (modificatore: " << (((CARISMA - 10) / 2) > 0 ? "+" : "") << (CARISMA - 10) / 2 << ")." << endl;
+
    cin.ignore(numeric_limits<streamsize>::max(), '\n');
    cin.get();
    return 0;
@@ -64,7 +62,7 @@ int main() {
 
 //Definizione funzioni
 int controllaScelta() {
-   int valore;
+   float valore;
    while (!(cin >> valore) || valore!=static_cast<int>(valore)) {
       cout << "Errore. Valore non riconosciuto. Riprovare: ";
       cin.clear();
@@ -96,8 +94,8 @@ void sceltaCaratteristica(string caratteristica, span<int> vettore, int &CARATTE
          cout<<"Errore (-1). Valore non adeguato o già scelto. Riprovare: ";
          scelta=controllaScelta();
       }
-      cout<<"\nHai scelto la posizione "<<scelta<<", che corrisponde al punteggio "<<vettore[scelta-1]<<endl;
-      cout<<"Il punteggio della caratteristica "<<caratteristica<<" sarà: "<<vettore[scelta-1]<<". Il suo modificatore sarà: "<<(((vettore[scelta-1]-10)/2)>0 ? "+" : "")<<(vettore[scelta-1]-10)/2<<endl;
+      cout<<"\nHai scelto la posizione "<<scelta<<", che corrisponde al punteggio "<<vettore[scelta-1]<<"."<<endl;
+      cout<<"Il punteggio della caratteristica "<<caratteristica<<" sarà: "<<vettore[scelta-1]<<". Il suo modificatore sarà: "<<(((vettore[scelta-1]-10)/2)>0 ? "+" : "")<<(vettore[scelta-1]-10)/2<<".\n"<<endl;
       cout<<"Confermi la scelta? (s/n): ";
       conferma = controllaConferma();
       while (conferma!='s' && conferma!='S' && conferma!='n' && conferma!='N'){
@@ -108,11 +106,7 @@ void sceltaCaratteristica(string caratteristica, span<int> vettore, int &CARATTE
    while (conferma=='n' || conferma=='N');
    CARATTERISTICA=vettore[scelta-1];
    vettore[scelta-1]=-1; //Rende il punteggio scelto non più disponibile
-   cout<<"Il punteggio scelto per la caratteristica "<<caratteristica<<" è: "<<CARATTERISTICA<<" (modificatore: "<<(((CARATTERISTICA-10)/2)>0 ? "+" : "")<<(CARATTERISTICA-10)/2<<")\n"<<endl;
-}
-
-void elencoDefinitivo(string caratteristica, int CARATTERISTICA) {
-   cout<<caratteristica<<": "<<CARATTERISTICA<<" (modificatore: "<<(((CARATTERISTICA-10)/2)>0 ? "+" : "")<<(CARATTERISTICA-10)/2<<")"<<endl;
+   cout<<"Il punteggio scelto per la caratteristica "<<caratteristica<<" è: "<<CARATTERISTICA<<" (modificatore: "<<(((CARATTERISTICA-10)/2)>0 ? "+" : "")<<(CARATTERISTICA-10)/2<<").\n"<<endl;
 }
 
 void leggitotali(span<int> vettore) {
