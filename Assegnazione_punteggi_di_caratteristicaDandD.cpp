@@ -83,7 +83,7 @@ int main()
    cout << format("CARISMA: {} (modificatore: {:+}).\n", CARISMA, modificatore(CARISMA)) << endl;
 
    // Creazione file di testo con i risultati
-   cout << "Salvare i risultati in un file di testo? ('s'='sì'): ";
+   cout << "Salvare i risultati in un file di testo? (\"s\"=\"sì\"): ";
    char salvaFile = controllaConferma();
    if (salvaFile == 's' || salvaFile == 'S')
    {
@@ -156,7 +156,7 @@ void sceltaCaratteristica(const string caratteristica, span<int> vettore, int &C
       conferma = controllaConferma();
       while (conferma != 's' && conferma != 'S' && conferma != 'n' && conferma != 'N')
       {
-         cout << "Carattere non adeguato. Inserire 's' per 'sì' o 'n' per 'no': ";
+         cout << "Carattere non adeguato. Inserire \"s\" per \"sì\" o \"n\" per \"no\": ";
          conferma = controllaConferma();
       }
    } while (conferma == 'n' || conferma == 'N');
@@ -177,7 +177,7 @@ void leggitotali(span<int> vettore)
    cout << "] ";
    if (contatore > 1)
    {
-      cout << " '-1'=già scelto";
+      cout << " \"-1\"=già scelto";
    }
    contatore++;
 }
