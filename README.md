@@ -14,4 +14,4 @@ A compiler supporting C++20+ is required.
 
 ## Download
 
-The last compiled version for Windows is available for download in the [Releases](https://github.com/SpadaSpettro/Assegnazione-punteggi-di-caratteristica_DandD/releases) section.
+The latest compiled version for Windows is available for download in the [Releases](https://github.com/SpadaSpettro/Assegnazione-punteggi-di-caratteristica_DandD/releases) section.
