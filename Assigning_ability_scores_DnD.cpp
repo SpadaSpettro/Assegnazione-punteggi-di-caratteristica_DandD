@@ -150,8 +150,8 @@ void assegnazioneCaratteristica(const string caratteristica, span<int> array_tot
          cout << "Error (-1). Inadequate or already chosen position. Please try again: ";
          posizionePunteggio = controllaInt();
       }
-      cout << format("You have chosen position {}, which corresponds to the score {}.\n", posizionePunteggio, punteggio);
-      cout << format("The score for the ability {} will be: {}. Its modifier will be: {:+}.\n\n", caratteristica, punteggio, calcoloModificatore(punteggio));
+      cout << format("You have chosen position \"{}\", which corresponds to the score \"{}\".\n", posizionePunteggio, punteggio);
+      cout << format("The score for the ability {} will be: {}. Its modifier will be: {:+}.\n", caratteristica, punteggio, calcoloModificatore(punteggio));
       cout << "Confirm the choice? (y/n): ";
       conferma = controllaChar();
       while (conferma != 'y' && conferma != 'Y' && conferma != 'n' && conferma != 'N')
@@ -175,9 +175,13 @@ void stampaArray_totali(span<int> array_totali)
       h++;
    }
    cout << "] ";
-   if (contatore > 1)
+   for (auto j : array_totali)
    {
-      cout << " \"-1\"=already chosen";
+      if (j == -1)
+      {
+         cout << " \"-1\"=already chosen";
+         break;
+      }
    }
    contatore++;
 }
